@@ -2,6 +2,8 @@
 
 ViVAE is a toolkit for single-cell data denoising and dimensionality reduction.
 
+**It is published together with [ViScore](https://github.com/saeyslab/ViScore), a collection of tools for evaluation of dimensionality reduction.**
+
 ## Installation
 
 ViVAE is a Python package built on top of TensorFlow.
