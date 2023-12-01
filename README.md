@@ -32,7 +32,7 @@ pip install tensorflow_probability
 pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
 ```
 
-Consult [this tutorial](https://developer.apple.com/metal/tensorflow-plugin/) in case of problems.
+Consult [this tutorial](https://developer.apple.com/metal/tensorflow-plugin/) in case of TensorFlow installation problems.
 
 ### Windows (CUDA)
 
