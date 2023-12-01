@@ -70,9 +70,9 @@ pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
 
 Consult [this tutorial](https://www.tensorflow.org/install/pip#cpu) in case of TensorFlow installation problems.
 
-### Verification
+### GPU verification
 
-To verify correct installation of TensorFlow, activate the environment and run the following line:
+To verify whether TensorFlow can use GPU acceleraction, activate the environment and run the following line:
 
 ```
 python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
