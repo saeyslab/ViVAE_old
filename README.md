@@ -25,10 +25,10 @@ GPU acceleration, when available, is highly recommended.
 
 ```
 conda activate ViVAE
-pip install tensorflow==2.13.0
+pip install tensorflow==2.15.0
 pip install tensorflow-macos
 pip install tensorflow-metal
-pip install tensorflow_probability
+pip install tensorflow_probability==0.23.0
 pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
 ```
 
@@ -38,8 +38,8 @@ Consult [this tutorial](https://developer.apple.com/metal/tensorflow-plugin/) in
 
 ```
 conda install conda-forge cudatoolkit=11.2 cudnn=8.1.0
-pip install "tensorflow<2.11"
-pip install tensorflow_probability
+pip install "tensorflow==2.15.0"
+pip install "tensorflow_probability==0.23.0"
 pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
 ```
 
@@ -49,12 +49,12 @@ Consult [this tutorial](https://www.tensorflow.org/install/pip#windows-native) i
 
 ```
 conda install -c conda-forge cudatoolkit=11.8.0
-python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.12.*
+python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.15.0
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d
 echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 echo 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib/:$CUDNN_PATH/lib:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-pip install tensorflow_probability
+pip install tensorflow_probability==0.23.0
 pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
 ```
 
@@ -63,8 +63,8 @@ Consult [this tutorial](https://www.tensorflow.org/install/pip#linux) in case of
 ### CPU
 
 ```
-pip install tensorflow
-pip install tensorflow_probability
+pip install tensorflow==2.15.0
+pip install tensorflow_probability==0.23.0
 pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
 ```
 
