@@ -89,9 +89,9 @@ Recommended workflow uses pre-smoothing (denoising) of input data and training a
 # `annot` is np.ndarray of labels per row of `X`
 
 import ViVAE
-knn = ViVAE.make_knn(X, fname='knn.npy'
+knn = ViVAE.make_knn(X, fname='knn.npy')
                                # build k-NNG if not available already (first run may take longer with pynndescent)
-Xs = ViVAE.smooth(X, knn=knn, coef=1.0, n_iter = 1)
+Xs = ViVAE.smooth(X, knn=knn, coef=1.0, n_iter=1)
                                # denoise input to VAE
 proj = ViVAE.ViVAE(full_dim=Xs.shape[1]).fit_transform(X=Xs)
                                # train model and create embedding

@@ -316,7 +316,7 @@ class ViVAE_network(tf.keras.Model):
         """
         Instantiate ViVAE network model
 
-        Constructor for a `cyen_network` object. Do not use this manually, use the `ViVAE` model constructor instead.
+        Constructor for a `ViVAE_network` object. Do not use this manually, use the `ViVAE` model constructor instead.
 
         - data:         optional high-dimensional data coordinate matrix (`full_dim` can be specified instead) (nd.nparray)
         - full_dim:     optional `data` dimensionality `data.shape[1]` (`data` can be specified instead) (int)
@@ -776,7 +776,7 @@ class ViVAE_network(tf.keras.Model):
     
     def call(self, x):
         """
-        Run forward pass through cyen model
+        Run forward pass through ViVAE model
 
         - x: list of
             - row-wise coordinate matrix of high-dimensional points (anchor points if Siamese network-training on triplets) (np.ndarray/tf.Tensor)
@@ -997,7 +997,7 @@ class ViVAE:
         self.model.fitted = False
 
     def __repr__(self):
-        return f'cyen DR model (fitted={self.model.fitted}, full_dim={self.model.full_dim}, latent_dim={self.model.latent_dim})'
+        return f'ViVAE DR model (fitted={self.model.fitted}, full_dim={self.model.full_dim}, latent_dim={self.model.latent_dim})'
 
     def reset(self):
         """
@@ -1073,7 +1073,7 @@ class ViVAE:
         Use the `transform` method to produce a lower-dimensional embedding using the trained model.
 
         - X:                 row-wise coordinate matrix of high-dimensional input data (np.ndarray)
-        - knn:               optional k-nearest-neighbour graph as generates with `cyen.make_knn` (list)
+        - knn:               optional k-nearest-neighbour graph as generates with `ViVAE.make_knn` (list)
         - k:                 maximum nearest neighbour count to use, also if new k-nearest-neighbour graph needs to be constructed (int)
         - triplet_sampling:  for (optional) Siamese network training, use ivis-inspired '`simple`' or TriMap-inspired '`trimap`' sampling for generating and weighting triplets? (str)
         - k_triplet:         positive reference neighbour rank for 'simple' or 'trimap' triplet sampling (int)
@@ -1180,7 +1180,7 @@ class ViVAE:
                 os.makedirs(fpath_storage)
 
         ## Compile model
-        self.model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate))
+        self.model.compile(optimizer=tf.keras.optimizers.legacy.Adam(learning_rate=learning_rate))
 
         ## Attach data
         self.model.attach_data(X)
@@ -1226,9 +1226,9 @@ class ViVAE:
 
     def transform(self, X: np.ndarray):
         """
-        Transform data using cyen model
+        Transform data using ViVAE model
 
-        Using a trained cyen model, generate a lower-dimensional embedding of a high-dimensional dataset.
+        Using a trained ViVAE model, generate a lower-dimensional embedding of a high-dimensional dataset.
 
         - X: high-dimensional data coordinate matrix (np.ndarray)
         """
@@ -1283,7 +1283,7 @@ class ViVAE:
         Use arguments `callback_csv` and `callback_tb` to set up monitoring of loss term values throughout training.
 
         - X:                row-wise coordinate matrix of high-dimensional input data (np.ndarray)
-        - knn:              optional k-nearest-neighbour graph as generates with `cyen.make_knn` (list)
+        - knn:              optional k-nearest-neighbour graph as generates with `ViVAE.make_knn` (list)
         - k:                maximum nearest neighbour count to use, also if new k-nearest-neighbour graph needs to be constructed (int)
         - triplet_sampling: for (optional) Siamese network training, use ivis-inspired '`simple`' or TriMap-inspired '`trimap`' sampling for generating and weighting triplets? (str)
         - k_triplet:        positive reference neighbour rank for 'simple' triplet sampling (int)
@@ -1320,11 +1320,11 @@ class ViVAE:
         """
         Extract k-nearest-neighbour graph if it was constructed
 
-        If the k-NNG is attached to the cyen model fitted to a dataset, this function returns it. If the k-NNG has not been
-        constructed, use the function `cyen.make_knn` instead to construct it.
+        If the k-NNG is attached to the ViVAE model fitted to a dataset, this function returns it. If the k-NNG has not been
+        constructed, use the function `ViVAE.make_knn` instead to construct it.
         """
         
         if self.model.knn_idcs is None or self.model.knn_dist is None:
-            raise AttributeError('k-nearest neighbour graph not available, use `cyen.make_knn` instead')
+            raise AttributeError('k-nearest neighbour graph not available, use `ViVAE.make_knn` instead')
         
         return [self.model.knn_idcs, self.model.knn_dist]
