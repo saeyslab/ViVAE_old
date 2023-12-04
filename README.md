@@ -26,7 +26,6 @@ GPU acceleration, when available, is highly recommended.
 ```
 conda activate ViVAE
 pip install tensorflow==2.15.0
-pip install tensorflow-macos
 pip install tensorflow-metal
 pip install tensorflow_probability==0.23.0
 pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
