@@ -70,6 +70,15 @@ PALETTE = [
             '#5B4534', '#FDE8DC', '#404E55', '#0089A3', '#CB7E98', '#A4E804', '#324E72', '#6A3A4C'
         ]
 
+def newer_tensorflow():
+    """
+    Determine whether TensorFlow >= 2.11.0 (API changes)
+    """
+    version = tf.__version__
+    version = version.split('.')
+    version = version[:2]
+    version = [int(x) for x in version]
+    return version[0]>2 or (version[0]==2 and version[1]>=11)
 
 ### Distance function ----
 
@@ -1180,7 +1189,10 @@ class ViVAE:
                 os.makedirs(fpath_storage)
 
         ## Compile model
-        self.model.compile(optimizer=tf.keras.optimizers.legacy.Adam(learning_rate=learning_rate))
+        opt = tf.keras.optimizers.Adam(learning_rate=learning_rate)
+        if newer_tensorflow():
+            opt = tf.keras.optimizers.legacy.Adam(learning_rate=learning_rate)
+        self.model.compile(optimizer=opt)
 
         ## Attach data
         self.model.attach_data(X)

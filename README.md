@@ -21,21 +21,25 @@ Next, activate the new environment and install `tensorflow` and `tensorflow_prob
 TensorFlow installation is platform-specific.
 GPU acceleration, when available, is highly recommended.
 
-### macOS (Metal)
+### macOS (AMD or Apple Silicon GPUs)
 
 ```
 conda activate ViVAE
-pip install tensorflow==2.15.0
-pip install tensorflow-metal
-pip install tensorflow_probability==0.23.0
+pip install tensorflow-macos==2.9.0
+pip install tensorflow-metal==0.5.0
+conda install -c apple tensorflow-deps==2.9.0
+pip install tensorflow_probability==0.17.0
 pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
 ```
+
+(The macOS install now uses an older version of TensorFlow due to compatibility issues otherwise.)
 
 Consult [this tutorial](https://developer.apple.com/metal/tensorflow-plugin/) in case of TensorFlow installation problems.
 
 ### Windows (CUDA)
 
 ```
+conda activate ViVAE
 conda install conda-forge cudatoolkit=11.2 cudnn=8.1.0
 pip install "tensorflow==2.15.0"
 pip install "tensorflow_probability==0.23.0"
@@ -47,6 +51,7 @@ Consult [this tutorial](https://www.tensorflow.org/install/pip#windows-native) i
 ### Linux (CUDA)
 
 ```
+conda activate ViVAE
 conda install -c conda-forge cudatoolkit=11.8.0
 python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.15.0
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d
@@ -62,6 +67,7 @@ Consult [this tutorial](https://www.tensorflow.org/install/pip#linux) in case of
 ### CPU
 
 ```
+conda activate ViVAE
 pip install tensorflow==2.15.0
 pip install tensorflow_probability==0.23.0
 pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
