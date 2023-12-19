@@ -13,7 +13,7 @@ setup(
         description=DESCRIPTION,
         long_description=LONG_DESCRIPTION,
         packages=find_packages(),
-        install_requires=['numpy', 'scipy', 'numba', 'tensorflow'],
+        install_requires=[],
         keywords=['python'],
         classifiers= [
             "Development Status :: 4 - Beta",
