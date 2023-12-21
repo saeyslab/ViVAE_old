@@ -12,6 +12,8 @@ We recommend creating a new Anaconda environment for ViVAE.
 On Linux or macOS, use the command line for installation.
 On Windows, use Anaconda Prompt.
 
+*(A test install run on 2020 MacBook Air runs below 4 minutes.)*
+
 ```
 conda create --name ViVAE python=3.9 \
     numpy==1.22.4 numba==0.58.1 pandas==2.1.4 matplotlib==3.8.2 scipy==1.11.4 pynndescent==0.5.11 scikit-learn==1.3.2 scanpy==1.9.6
