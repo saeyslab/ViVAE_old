@@ -102,3 +102,15 @@ proj = ViVAE.ViVAE(full_dim=Xs.shape[1]).fit_transform(X=Xs)
                                # train model and create embedding
 ViVAE.plot(proj=proj, annot=annot) # plot embedding
 ```
+
+## Example with data
+
+The `example/example.ipynb` Jupyer notebook shows usage of ViVAE and ViScore on a provided dataset, including the scoring methodology used in our [paper](https://www.biorxiv.org/content/10.1101/2023.11.23.568428v2).
+
+Use [Git LFS](https://git-lfs.com) to download the attached datasets.
+
+## Pre-print
+
+The pre-print of our publication is available [here](https://www.biorxiv.org/content/10.1101/2023.11.23.568428v2) on bioRxiv.
+
+It describes underlying methodology of ViVAE and ViScore, reviews past work in dimensionality reduction and evaluation of it and links to publicly available datasets on which performance of ViVAE was evaluated.
