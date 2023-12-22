@@ -108,6 +108,7 @@ ViVAE.plot(proj=proj, annot=annot) # plot embedding
 ## Example with data
 
 The `example/example.ipynb` Jupyer notebook shows usage of ViVAE and ViScore on a provided dataset, including the scoring methodology used in our [paper](https://www.biorxiv.org/content/10.1101/2023.11.23.568428v2).
+Refer to the paper for existing visualisations and scoring results of the Shekhar dataset for reference (expected outputs).
 
 Use [Git LFS](https://git-lfs.com) to download the attached datasets.
 
