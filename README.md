@@ -1,5 +1,7 @@
 # ViVAE
 
+**Revised & re-written version [here](https://github.com/saeyslab/ViVAE).*
+
 *[David Novak](https://github.com/davnovak), Cyril de Bodt, Pierre Lambert, John A. Lee, Sofie Van Gassen, Yvan Saeys*
 
 ViVAE is a toolkit for single-cell data denoising and dimensionality reduction.
