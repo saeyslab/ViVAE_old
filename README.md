@@ -1,6 +1,6 @@
 # ViVAE
 
-**Revised & re-written version [here](https://github.com/saeyslab/ViVAE).*
+**Revised & re-written version [here](https://github.com/saeyslab/ViVAE).**
 
 *[David Novak](https://github.com/davnovak), Cyril de Bodt, Pierre Lambert, John A. Lee, Sofie Van Gassen, Yvan Saeys*
 
