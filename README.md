@@ -35,7 +35,7 @@ pip install tensorflow-macos==2.9.0
 pip install tensorflow-metal==0.5.0
 conda install -c apple tensorflow-deps==2.9.0
 pip install tensorflow_probability==0.17.0
-pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
+pip install --upgrade git+https://github.com/saeyslab/ViVAE_old.git
 ```
 
 (The macOS install now uses an older version of TensorFlow due to compatibility issues otherwise.)
@@ -49,7 +49,7 @@ conda activate ViVAE
 conda install conda-forge cudatoolkit=11.2 cudnn=8.1.0
 pip install "tensorflow==2.15.0"
 pip install "tensorflow_probability==0.23.0"
-pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
+pip install --upgrade git+https://github.com/saeyslab/ViVAE_old.git
 ```
 
 Consult [this tutorial](https://www.tensorflow.org/install/pip#windows-native) in case of TensorFlow installation problems.
@@ -65,7 +65,7 @@ echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn._
 echo 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib/:$CUDNN_PATH/lib:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 pip install tensorflow_probability==0.23.0
-pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
+pip install --upgrade git+https://github.com/saeyslab/ViVAE_old.git
 ```
 
 Consult [this tutorial](https://www.tensorflow.org/install/pip#linux) in case of TensorFlow installation problems.
@@ -76,7 +76,7 @@ Consult [this tutorial](https://www.tensorflow.org/install/pip#linux) in case of
 conda activate ViVAE
 pip install tensorflow==2.15.0
 pip install tensorflow_probability==0.23.0
-pip install --upgrade git+https://github.com/saeyslab/ViVAE.git
+pip install --upgrade git+https://github.com/saeyslab/ViVAE_old.git
 ```
 
 Consult [this tutorial](https://www.tensorflow.org/install/pip#cpu) in case of TensorFlow installation problems.
